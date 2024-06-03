@@ -1,10 +1,11 @@
 //import { useState } from 'react'
-import HomePage from "./pages/HomePage"
+//import HomePage from "./pages/HomePage"
+import LoginPage from "./pages/LoginPage"
 
 function App() {
   return (
     <section className="container">
-      <HomePage />
+      <LoginPage/>
     </section>
   )
 }
