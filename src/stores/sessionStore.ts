@@ -1,9 +1,9 @@
 import { create } from 'zustand';
-import User from '../models/UserModel'
+import UserType from '../models/UserModel'
 
 type SessionStore = {
-    loggedInUser: User | null;
-    login: (user: User) => void;
+    loggedInUser: UserType | null;
+    login: (user: UserType) => void;
     logout: () => void;
 };
 
