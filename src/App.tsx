@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react'
-//import HomePage from "./pages/HomePage"
-import LoginPage from "./pages/LoginPage"
-//import { Routes, Route } from 'react-router-dom'
+import HomePage from "./pages/HomePage"
+import { Routes, Route } from 'react-router-dom'
 import axios from 'axios';
 import useUserStore from './stores/userStore';
 import useMovieStore from './stores/movieStore';
-import useSessionStore from './stores/sessionStore';
+//import useSessionStore from './stores/sessionStore';
 
 function App() {
 
@@ -40,7 +39,9 @@ function App() {
 
   return (
     <section className="container">
-      <LoginPage/>
+      <Routes>
+        <Route path="/" element={ <HomePage/> } />
+      </Routes>
     </section>
   )
   

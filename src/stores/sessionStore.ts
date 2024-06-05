@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import UserType from '../models/UserModel'
+import UserType from '../models/UserModel';
 
 type SessionStore = {
     loggedInUser: UserType | null;
