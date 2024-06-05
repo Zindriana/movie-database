@@ -1,5 +1,6 @@
 import LogoHeader from "../components/LogoComponent";
-import LoginForm from "../components/LoginComponent"
+import LoginForm from "../components/LoginComponent";
+import SignUp from "../components/SignUpComponent";
 
 function LoginPage(){
     return (
@@ -8,6 +9,7 @@ function LoginPage(){
                 <LogoHeader />
             </header>
             <LoginForm />
+            <SignUp />
         </>
     )
 }

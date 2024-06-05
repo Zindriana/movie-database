@@ -20,6 +20,7 @@ function SignUp(){
     }
     return (
     <section>
+        <p>Skapa en ny användare</p>
         <form onSubmit={handleSignUpSubmit} method="post">
             <label htmlFor="newUserName"></label>
             <input type="text" id="newUserName" name="newUserName" placeholder="Användarnamn"></input>

@@ -1,9 +1,11 @@
 import useSessionStore from "../stores/sessionStore";
-import SignUp from "./SignUpComponent";
+import useUserStore from "../stores/userStore";
+
 
 function LoginForm(){
 
     const login = useSessionStore((state) => state.login);
+    const users = useUserStore((state) => state.userList);
 
     function handleLoginSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -13,9 +15,15 @@ function LoginForm(){
         const password = formData.get('userPassword') as string;
 
         const user = { username, password };
+        const userExist = users.find(user => user.username);
 
-        login(user);
+        if(userExist?.password == user.password){
+            login(user);
         console.log(user.username + ' är inloggad');
+        } else {
+            console.log("Felaktiga användaruppgifter")
+        }
+        
     }
     return (
     <section>
@@ -26,9 +34,7 @@ function LoginForm(){
             <label htmlFor="userPassword"></label>
             <input type="password" id="userPassword" name="userPassword" placeholder="Lösenord"></input>
             <button type="submit">Logga in</button>
-        </form>
-        <p>Skapa ny användare</p>
-        <SignUp />
+        </form>        
     </section>
     )
 }
