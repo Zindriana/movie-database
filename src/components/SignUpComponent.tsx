@@ -23,7 +23,7 @@ function SignUp(){
             <input type="text" id="name" name="name" placeholder="Användarnamn"></input>
             <label htmlFor="password"></label>
             <input type="password" id="password" name="password" placeholder="Lösenord"></input>
-            <button type="submit">Skapa ny anvöndare</button>
+            <button type="submit">Skapa ny användare</button>
         </form> 
     </section>
     )
