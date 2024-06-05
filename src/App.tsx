@@ -5,6 +5,7 @@ import LoginPage from "./pages/LoginPage"
 import axios from 'axios';
 import useUserStore from './stores/userStore';
 import useMovieStore from './stores/movieStore';
+import useSessionStore from './stores/sessionStore';
 
 function App() {
 
@@ -42,6 +43,7 @@ function App() {
       <LoginPage/>
     </section>
   )
+  
 }
 
 export default App

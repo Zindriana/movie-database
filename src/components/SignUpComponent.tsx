@@ -2,32 +2,33 @@ import useUserStore from "../stores/userStore";
 
 function SignUp(){
 
-    const signUp = useUserStore((state) => state.userList);
+    const signUp = useUserStore((state) => state.addUser);
+    const userList = useUserStore((state) => state.userList)
 
-    function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    function handleSignUpSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
 
         const formData = new FormData(event.currentTarget);
-        const username = formData.get('name') as string;
-        const password = formData.get('password') as string;
+        const username = formData.get('newUserName') as string;
+        const password = formData.get('newUserPassword') as string;
 
         const user = { username, password };
 
         signUp(user);
         console.log('ny användare skapad 🎉');
+        console.log(userList);
     }
     return (
     <section>
-        <form onSubmit={handleSubmit} method="post">
-            <label htmlFor="name"></label>
-            <input type="text" id="name" name="name" placeholder="Användarnamn"></input>
-            <label htmlFor="password"></label>
-            <input type="password" id="password" name="password" placeholder="Lösenord"></input>
+        <form onSubmit={handleSignUpSubmit} method="post">
+            <label htmlFor="newUserName"></label>
+            <input type="text" id="newUserName" name="newUserName" placeholder="Användarnamn"></input>
+            <label htmlFor="newUserPassword"></label>
+            <input type="password" id="newUserPassword" name="newUserPassword" placeholder="Lösenord"></input>
             <button type="submit">Skapa ny användare</button>
         </form> 
     </section>
     )
-    
 }
 
 export default SignUp;
