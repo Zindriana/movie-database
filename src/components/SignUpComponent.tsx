@@ -29,7 +29,6 @@ function SignUp(){
       }, [keys, setMovieList]);
     
     const signUp = useUserStore((state) => state.addUser);
-    const userList = useUserStore((state) => state.userList)
     const movies = movie;
 
     function handleSignUpSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -44,7 +43,6 @@ function SignUp(){
 
         signUp(user);
         console.log(`Användare ${username} skapad`);
-        console.log(userList);
     }
     return (
     <section>

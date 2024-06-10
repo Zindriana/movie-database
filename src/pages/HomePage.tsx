@@ -1,6 +1,6 @@
-import LogOut from "../components/LogoutComponent";
 import LoginPage from "./LoginPage";
 import useSessionStore from "../stores/sessionStore";
+import MovieListPage from "./MovieListPage";
 
 function HomePage(){
 
@@ -8,7 +8,7 @@ function HomePage(){
 
     if(userOnline){
         return (
-            <LogOut />
+            <MovieListPage />
             
         )
     } else {
