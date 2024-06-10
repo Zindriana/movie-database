@@ -14,7 +14,7 @@ function LoginForm(){
         const username = formData.get('userName') as string;
         const password = formData.get('userPassword') as string;
 
-        const userExist = users.find(user => user.username);
+        const userExist = users.find(user => user.username === username);
         
         if(userExist?.password == password){
             const userMovieList = userExist.userMovieList;
