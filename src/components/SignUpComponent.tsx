@@ -1,9 +1,36 @@
 import useUserStore from "../stores/userStore";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import useMovieStore from '../stores/movieStore';
 
 function SignUp(){
 
+    const [keys, setKeys] = useState<string | null> (null);
+
+    const { movie, setMovieList } = useMovieStore(state => ({
+        movie : state.movieList,
+        setMovieList: state.setMovieList,
+      }));
+
+    useEffect(() => {
+        axios.get(`http://localhost:8080/api/keys`)
+          .then(response => {
+            setKeys(response.data.data);
+          })
+      }, []);
+    
+      useEffect(() => {
+        if(keys){
+          axios.get(`http://localhost:8080/api/movies?key=${keys}`)
+          .then(response => {
+            setMovieList(response.data);
+          })
+        }
+      }, [keys, setMovieList]);
+    
     const signUp = useUserStore((state) => state.addUser);
     const userList = useUserStore((state) => state.userList)
+    const movies = movie;
 
     function handleSignUpSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -11,11 +38,12 @@ function SignUp(){
         const formData = new FormData(event.currentTarget);
         const username = formData.get('newUserName') as string;
         const password = formData.get('newUserPassword') as string;
+        const userMovieList = movies;
 
-        const user = { username, password };
+        const user = { username, password, userMovieList };
 
         signUp(user);
-        console.log('ny användare skapad 🎉');
+        console.log(`Användare ${username} skapad`);
         console.log(userList);
     }
     return (

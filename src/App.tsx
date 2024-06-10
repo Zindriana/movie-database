@@ -1,21 +1,21 @@
-import { useState, useEffect } from 'react'
+//import { useState, useEffect } from 'react'
 import HomePage from "./pages/HomePage"
 import { Routes, Route } from 'react-router-dom'
-import axios from 'axios';
+//import axios from 'axios';
 import useUserStore from './stores/userStore';
-import useMovieStore from './stores/movieStore';
+//import useMovieStore from './stores/movieStore';
 //import useSessionStore from './stores/sessionStore';
 
 function App() {
 
-  const [keys, setKeys] = useState<string | null> (null);
+  //const [keys, setKeys] = useState<string | null> (null);
 
   const { user, setUserList } = useUserStore(state => ({
     user : state.userList,
     setUserList: state.setUserList,
   }));
 
-  const { movie, setMovieList } = useMovieStore(state => ({
+  /*const { movie, setMovieList } = useMovieStore(state => ({
     movie : state.movieList,
     setMovieList: state.setMovieList,
   }));
@@ -35,7 +35,7 @@ function App() {
         setMovieList(response.data);
       })
     }
-  }, [keys, setMovieList]);
+  }, [keys, setMovieList]);*/
 
   return (
     <section className="container">

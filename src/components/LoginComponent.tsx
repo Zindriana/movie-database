@@ -14,17 +14,19 @@ function LoginForm(){
         const username = formData.get('userName') as string;
         const password = formData.get('userPassword') as string;
 
-        const user = { username, password };
         const userExist = users.find(user => user.username);
-
-        if(userExist?.password == user.password){
+        
+        if(userExist?.password == password){
+            const userMovieList = userExist.userMovieList;
+            const user = { username, password, userMovieList };
             login(user);
-        console.log(user.username + ' är inloggad');
+        console.log(user.username + ' är inloggad ');
+        console.log(user.userMovieList);
         } else {
             console.log("Felaktiga användaruppgifter")
-        }
-        
+        }  
     }
+
     return (
     <section>
         <p>Logga in</p>

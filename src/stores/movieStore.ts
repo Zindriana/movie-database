@@ -14,7 +14,6 @@ const useMovieStore = create<MovieStore>((set) => ({
     addMovie: (movie) => set((state) => ({movieList:[...state.movieList, movie]})),
     deleteMovie: (title) => set((state) => ({movieList:state.movieList.filter((movie) => movie.title !== title)}))
 
-
 }));
 
 export default useMovieStore;
