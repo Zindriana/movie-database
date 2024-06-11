@@ -1,7 +1,7 @@
 type MovieType = {
     title: string,
     poster: string,
-    trailer: string
+    trailer_link: string,
     isFavorite?: boolean
 }
 

@@ -1,6 +1,11 @@
-import useUserStore from "../stores/userStore";
+//import useUserStore from "../stores/userStore";
+import useSessionStore from "../stores/sessionStore";
 
 function AddMovie(){
+
+    const loggedUser = useSessionStore((state) => state.loggedInUser);
+    const movieList = loggedUser?.userMovieList.data;
+    //const addMovie = useUserStore((state) => state.setUserList);
 
     function handleAddMovieSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -9,12 +14,10 @@ function AddMovie(){
         const movieTitle = formData.get('newMovieTitle') as string;
         const moviePoster = formData.get('newMoviePoster') as string;
         const movieTrailer = formData.get('newMovieTrailer') as string;
-        const movie = { movieTitle, moviePoster, movieTrailer };
+        const movie = { title : movieTitle, poster : moviePoster, trailer_link : movieTrailer };
 
-        const addMovie = useUserStore((state) => state.addMovie);
-        addMovie(movie);
+        movieList?.push(movie);
 
-        
     }
 
     return(

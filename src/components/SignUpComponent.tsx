@@ -38,7 +38,6 @@ function SignUp(){
         const username = formData.get('newUserName') as string;
         const password = formData.get('newUserPassword') as string;
         const userMovieList = movies;
-        console.log(userMovieList);
         const user = { username, password, userMovieList };
 
         signUp(user);
