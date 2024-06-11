@@ -3,10 +3,10 @@ import useSessionStore from "../stores/sessionStore";
 
 function MovieList(){
     const loggedUser = useSessionStore((state) => state.loggedInUser);
-    const movieList = loggedUser?.userMovieList;
+    const movieList = loggedUser?.userMovieList.data;
     console.log(loggedUser);
     console.log(movieList);
-    console.log(movieList?.);
+    console.log(loggedUser?.userMovieList.data.length);
 
     return (
         <div>

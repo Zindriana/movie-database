@@ -21,7 +21,7 @@ function LoginForm(){
             const user = { username, password, userMovieList };
             login(user);
         console.log(user.username + ' är inloggad ');
-        console.log(user.userMovieList);
+        
         } else {
             console.log("Felaktiga användaruppgifter")
         }  

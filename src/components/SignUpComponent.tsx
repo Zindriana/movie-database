@@ -38,23 +38,23 @@ function SignUp(){
         const username = formData.get('newUserName') as string;
         const password = formData.get('newUserPassword') as string;
         const userMovieList = movies;
-
+        console.log(userMovieList);
         const user = { username, password, userMovieList };
 
         signUp(user);
         console.log(`Användare ${username} skapad`);
     }
     return (
-    <section>
-        <p>Skapa en ny användare</p>
-        <form onSubmit={handleSignUpSubmit} method="post">
-            <label htmlFor="newUserName"></label>
-            <input type="text" id="newUserName" name="newUserName" placeholder="Användarnamn"></input>
-            <label htmlFor="newUserPassword"></label>
-            <input type="password" id="newUserPassword" name="newUserPassword" placeholder="Lösenord"></input>
-            <button type="submit">Skapa ny användare</button>
-        </form> 
-    </section>
+      <section>
+          <p>Skapa en ny användare</p>
+          <form onSubmit={handleSignUpSubmit} method="post">
+              <label htmlFor="newUserName"></label>
+              <input type="text" id="newUserName" name="newUserName" placeholder="Användarnamn"></input>
+              <label htmlFor="newUserPassword"></label>
+              <input type="password" id="newUserPassword" name="newUserPassword" placeholder="Lösenord"></input>
+              <button type="submit">Skapa ny användare</button>
+          </form> 
+      </section>
     )
 }
 
