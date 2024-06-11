@@ -1,11 +1,9 @@
-//import useUserStore from "../stores/userStore";
 import useSessionStore from "../stores/sessionStore";
 
 function AddMovie(){
 
     const loggedUser = useSessionStore((state) => state.loggedInUser);
     const movieList = loggedUser?.userMovieList.data;
-    //const addMovie = useUserStore((state) => state.setUserList);
 
     function handleAddMovieSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
