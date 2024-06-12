@@ -1,5 +1,6 @@
 
 import useSessionStore from "../stores/sessionStore";
+import '../styles/movieListStyle.css';
 
 function MovieList(){
     const loggedUser = useSessionStore((state) => state.loggedInUser);
@@ -9,9 +10,13 @@ function MovieList(){
         <div>
             {(movieList) && movieList.length > 0 ? (
                 movieList.map((movie, index) => (
-                    <div key={index}>
-                        <p>{movie.title}</p>
-                    </div>
+                    <section className="movieSection" key={index}>
+                        <button className="movieBtn">{movie.title}</button>
+                        <section className="smallBtnContainer">
+                            <button className="smallBtn deleteBtn">Ta bort film</button>
+                            <button className="smallBtn favoriteBtn">Lägg till som favorit</button>
+                        </section>
+                    </section>
                 ))
             ) : (
                 <p>Inga filmer tillgängliga</p>
