@@ -1,12 +1,14 @@
 
 import useSessionStore from "../stores/sessionStore";
 import '../styles/movieListStyle.css';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import SmallBtn from "./SmallBtnComponent";
 
 function MovieList(){
     const loggedUser = useSessionStore((state) => state.loggedInUser);
     const movieList = loggedUser?.userMovieList.data;
     const navigate = useNavigate();
+    const { index } = useParams();
 
     const handleMovieDetailClick = (event: React.FormEvent<HTMLButtonElement>) => {
         const movieTitle = event.currentTarget.getAttribute('data-title');
@@ -36,10 +38,7 @@ function MovieList(){
                 movieList.map((movie, index) => (
                     <section className="movieSection" key={index}>
                         <button onClick={handleMovieDetailClick} className="movieBtn" data-title={movie.title}>{movie.title}</button>
-                        <section className="smallBtnContainer">
-                            <button onClick={handleDeleteMovieClick} className="smallBtn deleteBtn" id={`delete-${index}`}>Ta bort film</button>
-                            <button onClick={handleFavoriteMovieClick} className="smallBtn favoriteBtn" id={`favorite-${index}`}>Lägg till som favorit</button>
-                        </section>
+                        <SmallBtn index={index} movieList={movieList}/>
                     </section>
                 ))
             ) : (

@@ -1,4 +1,5 @@
 import useSessionStore from "../stores/sessionStore";
+import SmallBtn from "./SmallBtnComponent";
 //import useUserStore from "../stores/userStore";
 
 type Props = {
@@ -15,12 +16,12 @@ function DetailedMovie ({ title } : Props){
     
         return (
             <>
-                <button></button>
                 <article>
-                    <p>{movieTitle}</p>
-                    <p>{moviePoster}</p>
-                    <p>{movieTrailer}</p>
+                    <h1>{movieTitle}</h1>
+                    <img src={moviePoster}/>
+                    <iframe src={movieTrailer}></iframe>
                 </article>
+                <SmallBtn index={index} movieList={movieList}/>
             </>
         );
 }
