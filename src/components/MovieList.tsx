@@ -15,7 +15,7 @@ function MovieList(){
 
     const handleDeleteMovieClick = (event: React.FormEvent<HTMLButtonElement>) => {
         const movieIndex = parseInt(event.currentTarget.id.split('-')[1], 10);
-        movieList.splice(movieIndex, 1);
+        movieList?.splice(movieIndex, 1);
         navigate('/movielist');
         
     }  
