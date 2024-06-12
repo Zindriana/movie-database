@@ -2,7 +2,7 @@ type MovieType = {
     title: string,
     poster: string,
     trailer_link: string,
-    isFavorite?: boolean
+    is_favorite?: boolean
 }
 
 export default MovieType

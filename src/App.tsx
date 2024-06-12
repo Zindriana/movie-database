@@ -1,6 +1,7 @@
 import HomePage from "./pages/HomePage"
 import { Routes, Route } from 'react-router-dom'
 import useUserStore from './stores/userStore';
+import MovieListPage from "./pages/MovieListPage";
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
     <section className="container">
       <Routes>
         <Route path="/" element={ <HomePage/> } />
+        <Route path="/movielist" element= { <MovieListPage/>} />
       </Routes>
     </section>
   )
