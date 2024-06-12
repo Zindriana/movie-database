@@ -1,10 +1,11 @@
 import { useParams } from "react-router-dom";
+import DetailedMovie from "../components/DetailedMovieComponent";
 
 function MovieDetailsPage(){
     const { title } = useParams();
     
     return(
-        <p>{ title }</p>
+        <DetailedMovie title={title}/>
     )
 
 }
