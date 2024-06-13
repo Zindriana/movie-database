@@ -9,10 +9,11 @@ type Props = {
 
 function DetailedMovie ({ title, index } : Props){
     const movieIndex = index;
-    console.log(movieIndex);
+    console.log("movieIndex: " + movieIndex);
     const loggedUser = useSessionStore((state) => state.loggedInUser);
     const movieList = loggedUser?.userMovieList.data;
     const movie = movieList?.find(movie => movie.title === title);
+    console.log("vilken film? :" + movie);
     const movieTitle = title || "Hittade ingen titel";
     const moviePoster = movie?.poster || "Hittade ingen bild";
     const movieTrailer = movie?.trailer_link || "Hittade ingen trailer";

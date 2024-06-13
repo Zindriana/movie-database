@@ -1,5 +1,6 @@
 import MovieType from '../models/MovieModel';
 import '../styles/movieListStyle.css';
+import '../styles/buttonStyle.css';
 import { useNavigate } from "react-router-dom";
 
 

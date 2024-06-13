@@ -6,7 +6,7 @@ type Props = {
     title : string,
     index: number
   }
-
+  
 function MovieDetailsPage({ title, index } : Props){
     const userOnline = useSessionStore((state) => state.loggedInUser)
     
