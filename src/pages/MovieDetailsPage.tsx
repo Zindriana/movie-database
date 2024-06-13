@@ -1,13 +1,25 @@
-import { useParams } from "react-router-dom";
 import DetailedMovie from "../components/DetailedMovieComponent";
+import useSessionStore from "../stores/sessionStore";
+import LoginPage from "./LoginPage";
 
-function MovieDetailsPage(){
-    const { title } = useParams();
+type Props = {
+    title : string,
+    index: number
+  }
+
+function MovieDetailsPage({ title, index } : Props){
+    const userOnline = useSessionStore((state) => state.loggedInUser)
     
-    return(
-        <DetailedMovie title={title}/>
-    )
-
+    if(userOnline){
+        return (
+            <DetailedMovie title={title} index={index}/>
+            
+        )
+    } else {
+        return (
+            <LoginPage />
+        )
+    }
 }
 
 export default MovieDetailsPage

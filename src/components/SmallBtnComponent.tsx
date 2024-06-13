@@ -7,7 +7,7 @@ type Props = {
     index: number;
     movieList: MovieType[];
 }
-
+    
 
 function SmallBtn({ index, movieList } : Props) {
     const navigate = useNavigate();
@@ -19,12 +19,15 @@ function SmallBtn({ index, movieList } : Props) {
     }  
     
     const handleFavoriteMovieClick = (event: React.FormEvent<HTMLButtonElement>) => {
+        console.log("Button ID:", event.currentTarget.id);
         const movieIndex = parseInt(event.currentTarget.id.split('-')[1], 10);
+        console.log("Clicked movie index:", movieIndex);
         const movie = movieList[movieIndex];
-        if(movie.is_favorite){
-            movie.is_favorite = false;
+        console.log("Selected movie:", movie);
+        if (movie && movie.is_favorite !== undefined) {
+            movie.is_favorite = !movie.is_favorite;
         } else {
-            movie.is_favorite = true;
+            console.error("Movie or is_favorite is undefined");
         }
     };
     return(
