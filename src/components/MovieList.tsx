@@ -11,7 +11,7 @@ function MovieList(){
     const handleMovieDetailClick = (event: React.FormEvent<HTMLButtonElement>) => {
         const movieTitle = event.currentTarget.getAttribute('data-title');
         const movieIndex = event.currentTarget.getAttribute('data-index');
-        navigate(`/${movieTitle}/${movieIndex}`);
+        navigate(`/${movieTitle}/${Number(movieIndex)}`);
     }
 
     return (
