@@ -1,8 +1,8 @@
 .movieSection{
-    display: flex,
+    display: flex;
+    flex-direction: row;
 }
 
-.movieBtn{
-    background-color: white;
-    border: none;
+.movieSection > img{
+    width: 20vw;
 }

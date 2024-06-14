@@ -1,7 +1,10 @@
 import DetailedMovie from "../components/DetailedMovieComponent";
+import LogoHeader from "../components/LogoComponent";
 import useSessionStore from "../stores/sessionStore";
 import LoginPage from "./LoginPage";
 import { useParams } from "react-router-dom";
+import "../styles/homePageStyle.css";
+import "../index.css";
 
   
 function MovieDetailsPage(){
@@ -10,7 +13,13 @@ function MovieDetailsPage(){
     
     if(userOnline){
         return (
-            <DetailedMovie title={title} index={index}/> 
+            <section className="bodyContainer">
+            <header>
+                <LogoHeader />
+                <DetailedMovie title={title} index={index}/> 
+            </header>
+            </section>
+            
         )
     } else {
         return (

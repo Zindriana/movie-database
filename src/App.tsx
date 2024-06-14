@@ -2,6 +2,7 @@ import HomePage from "./pages/HomePage"
 import { Routes, Route } from 'react-router-dom'
 import MovieListPage from "./pages/MovieListPage";
 import MovieDetailsPage from "./pages/MovieDetailsPage";
+import "./App.css";
 
 function App() {
 
