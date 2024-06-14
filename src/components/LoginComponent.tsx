@@ -30,8 +30,8 @@ function LoginForm(){
 
     return (
     <section className="formContainer">
-        <p>Logga in</p>
-        <form onSubmit={handleLoginSubmit} method="post">
+        <h2 className="heading">Logga in</h2>
+        <form className="formContainer" onSubmit={handleLoginSubmit} method="post">
             <label htmlFor="userName"></label>
             <input type="text" id="userName" name="userName" placeholder="Användarnamn"></input>
             <label htmlFor="userPassword"></label>

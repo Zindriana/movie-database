@@ -1,4 +1,9 @@
 .formContainer{
     display: flex;
-    
+    flex-direction: column;
+    margin: 5vw;
+}
+
+.heading{
+    color: white;
 }

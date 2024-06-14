@@ -46,8 +46,8 @@ function SignUp(){
     }
     return (
       <section className="formContainer">
-          <p>Skapa en ny användare</p>
-          <form onSubmit={handleSignUpSubmit} method="post">
+          <h2 className="heading">Skapa en ny användare</h2>
+          <form className="formContainer" onSubmit={handleSignUpSubmit} method="post">
               <label htmlFor="newUserName"></label>
               <input type="text" id="newUserName" name="newUserName" placeholder="Användarnamn"></input>
               <label htmlFor="newUserPassword"></label>

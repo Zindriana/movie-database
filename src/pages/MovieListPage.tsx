@@ -10,8 +10,8 @@ function MovieListPage (){
         <section className="bodyContainer">
             <LogoHeader />
             <LogOut />
-            <MovieList />
             <AddMovie />
+            <MovieList />
         </section>
     )
 

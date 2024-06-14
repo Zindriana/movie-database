@@ -1,11 +1,23 @@
 .smallBtn{
     max-width: 10vw;
+    padding: 1vw;
 }
 
 .movieBtn{
-    background-color: white;
+    color: white;
+    background-color: black;
     border: none;
-    max-width: 20vw;
+    max-width: 30vw;
     max-height: 5vw;
     margin: 2vw;
+}
+
+.favoriteBtn{
+    color: gold;
+    background-color: black;
+}
+
+.deleteBtn{
+    color: white;
+    background-color: black;
 }
