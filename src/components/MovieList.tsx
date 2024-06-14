@@ -4,6 +4,7 @@ import '../styles/buttonStyle.css';
 import { useNavigate } from "react-router-dom";
 import SmallBtn from "./SmallBtnComponent";
 
+
 function MovieList(){
     const loggedUser = useSessionStore((state) => state.loggedInUser);
     const movieList = loggedUser?.userMovieList.data;

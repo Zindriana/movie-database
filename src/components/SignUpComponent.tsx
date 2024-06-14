@@ -2,6 +2,7 @@ import useUserStore from "../stores/userStore";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import useMovieStore from '../stores/movieStore';
+import "../styles/formStyle.css";
 
 function SignUp(){
 
@@ -44,7 +45,7 @@ function SignUp(){
         console.log(`Användare ${username} skapad`);
     }
     return (
-      <section>
+      <section className="formContainer">
           <p>Skapa en ny användare</p>
           <form onSubmit={handleSignUpSubmit} method="post">
               <label htmlFor="newUserName"></label>

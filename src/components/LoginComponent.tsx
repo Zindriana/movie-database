@@ -1,5 +1,6 @@
 import useSessionStore from "../stores/sessionStore";
 import useUserStore from "../stores/userStore";
+import "../styles/formStyle.css";
 
 
 function LoginForm(){
@@ -28,7 +29,7 @@ function LoginForm(){
     }
 
     return (
-    <section>
+    <section className="formContainer">
         <p>Logga in</p>
         <form onSubmit={handleLoginSubmit} method="post">
             <label htmlFor="userName"></label>

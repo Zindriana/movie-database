@@ -5,4 +5,7 @@
 .movieBtn{
     background-color: white;
     border: none;
+    max-width: 20vw;
+    max-height: 5vw;
+    margin: 2vw;
 }
