@@ -1,5 +1,6 @@
 import useUserStore from "../stores/userStore";
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import useMovieStore from '../stores/movieStore';
 import "../styles/formStyle.css";
@@ -7,6 +8,7 @@ import "../styles/formStyle.css";
 function SignUp(){
 
     const [keys, setKeys] = useState<string | null> (null);
+    const navigate = useNavigate();
 
     const { movie, setMovieList } = useMovieStore(state => ({
         movie : state.movieList,
@@ -42,8 +44,8 @@ function SignUp(){
         const user = { username, password, userMovieList };
 
         signUp(user);
-        console.log(`Användare ${username} skapad`);
     }
+
     return (
       <section className="formContainer">
           <h2 className="heading">Skapa en ny användare</h2>

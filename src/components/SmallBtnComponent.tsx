@@ -16,6 +16,7 @@ type Props = {
 
 function SmallBtn({ index, movieList } : Props) {
     const navigate = useNavigate();
+    const movieIsFavorite = movieList[index].is_favorite;
     const handleDeleteMovieClick = (event: React.FormEvent<HTMLButtonElement>) => {
         const movieIndex = parseInt(event.currentTarget.id.split('-')[1], 10);
         movieList?.splice(movieIndex, 1);
@@ -26,16 +27,14 @@ function SmallBtn({ index, movieList } : Props) {
     const handleFavoriteMovieClick = (event: React.FormEvent<HTMLButtonElement>) => {
         const movieIndex = parseInt(event.currentTarget.id.split('-')[1], 10);
         const movie = movieList[movieIndex];
-        if (movie && movie.is_favorite !== undefined) {
-            movie.is_favorite = !movie.is_favorite;
-        } else {
-            console.error("Movie or is_favorite is undefined");
-        }
-    };
+        movie.is_favorite = !movie.is_favorite;
+        navigate('/movielist');
+    }
+
     return(
     <section className="smallBtnContainer">
         <button onClick={handleDeleteMovieClick} className="smallBtn deleteBtn" id={`delete-${index}`}><FontAwesomeIcon icon={faTrash} /></button>
-        <button onClick={handleFavoriteMovieClick} className="smallBtn favoriteBtn" id={`favorite-${index}`}><FontAwesomeIcon icon={faSolidStar} /></button>
+        <button onClick={handleFavoriteMovieClick} className="smallBtn favoriteBtn" id={`favorite-${index}`}><FontAwesomeIcon icon={movieIsFavorite ? faSolidStar : faRegularStar} /></button>
     </section>
     )
 }
