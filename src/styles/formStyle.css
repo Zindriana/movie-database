@@ -1,9 +1,19 @@
 .formContainer{
     display: flex;
     flex-direction: column;
-    margin: 5vw;
+    margin: 4vw;
+    text-align: center;
+    width: 60vw;
 }
 
 .heading{
+    color: white; 
+}
+
+input {
+    margin-bottom: 1vw;
+}
+
+.message {
     color: white;
 }

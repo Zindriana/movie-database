@@ -1,14 +1,15 @@
 .smallBtn{
     max-width: 10vw;
     padding: 1vw;
+    margin: 1vw;
 }
 
 .movieBtn{
     color: white;
     background-color: black;
     border: none;
-    max-width: 30vw;
-    max-height: 5vw;
+    width: 30vw;
+    height: 10vw;
     margin: 2vw;
 }
 

@@ -1,9 +1,11 @@
 import useSessionStore from "../stores/sessionStore";
 import useUserStore from "../stores/userStore";
+import React, { useState } from 'react';
 import "../styles/formStyle.css";
 
 
 function LoginForm(){
+    const [message, setMessage] = useState('');
 
     const login = useSessionStore((state) => state.login);
     const users = useUserStore((state) => state.userList);
@@ -21,11 +23,9 @@ function LoginForm(){
             const userMovieList = userExist.userMovieList;
             const user = { username, password, userMovieList };
             login(user);
-            console.log(user.username + ' är inloggad ');
-        
         } else {
-            console.log("Felaktiga användaruppgifter")
-        }  
+            setMessage('Felaktiga användaruppgifter');
+    }
     }
 
     return (
@@ -37,7 +37,8 @@ function LoginForm(){
             <label htmlFor="userPassword"></label>
             <input type="password" id="userPassword" name="userPassword" placeholder="Lösenord"></input>
             <button type="submit">Logga in</button>
-        </form>        
+        </form>
+        {message && <p className="message">{message}</p>}       
     </section>
     )
 }
