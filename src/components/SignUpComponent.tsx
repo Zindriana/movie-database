@@ -1,6 +1,5 @@
 import useUserStore from "../stores/userStore";
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import useMovieStore from '../stores/movieStore';
 import "../styles/formStyle.css";
@@ -9,7 +8,6 @@ function SignUp(){
 
     const [keys, setKeys] = useState<string | null> (null);
     const [message, setMessage] = useState('');
-    const navigate = useNavigate();
 
     const { movie, setMovieList } = useMovieStore(state => ({
         movie : state.movieList,

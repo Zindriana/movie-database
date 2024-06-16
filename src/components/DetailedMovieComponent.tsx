@@ -21,17 +21,17 @@ function DetailedMovie ({ title } : Props){
         navigate(`/movielist`);
     }
     
-        return (
-            <section className="movieSection">
-                //<button className="leftAdjust" onClick={handleGoBackClick}>Tillbaka</button>
-                <article>
-                    <h1 className="heading">{movieTitle}</h1>
-                    <img src={moviePoster}/>
-                    <iframe src={movieTrailer}></iframe>
-                    <SmallBtn index={parseInt(index)} movieList={movieList}/>
-                </article>
-            </section>
-        );
+    return (
+        <section className="detailedMovie">
+            <button className="leftAdjust"  onClick={handleGoBackClick}>Tillbaka</button>
+            <article className="detailedMovie">
+                <h1 className="heading">{movieTitle}</h1>
+                <img src={moviePoster}/>
+                <iframe src={movieTrailer}></iframe>
+                <SmallBtn index={parseInt(index)} movieList={movieList}/>
+            </article>
+        </section>
+    );
 }
 
 export default DetailedMovie;
