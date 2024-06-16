@@ -9,7 +9,9 @@ function MovieListPage (){
     return (
         <section className="bodyContainer">
             <LogoHeader />
-            <LogOut />
+            <div className="leftAdjust">
+                <LogOut />
+            </div>
             <AddMovie />
             <MovieList />
         </section>

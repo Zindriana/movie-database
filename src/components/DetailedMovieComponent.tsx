@@ -1,5 +1,6 @@
 import useSessionStore from "../stores/sessionStore";
 import SmallBtn from "./SmallBtnComponent";
+import "../styles/movieListStyle.css";
 import { useNavigate, useParams } from 'react-router-dom';
 
 type Props = {
@@ -21,15 +22,15 @@ function DetailedMovie ({ title } : Props){
     }
     
         return (
-            <>
-                <button onClick={handleGoBackClick}>Tillbaka</button>
+            <section className="movieSection">
+                //<button className="leftAdjust" onClick={handleGoBackClick}>Tillbaka</button>
                 <article>
-                    <h1>{movieTitle}</h1>
+                    <h1 className="heading">{movieTitle}</h1>
                     <img src={moviePoster}/>
                     <iframe src={movieTrailer}></iframe>
+                    <SmallBtn index={parseInt(index)} movieList={movieList}/>
                 </article>
-                <SmallBtn index={parseInt(index)} movieList={movieList}/>
-            </>
+            </section>
         );
 }
 

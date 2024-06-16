@@ -6,7 +6,6 @@ import "../styles/formStyle.css";
 
 function LoginForm(){
     const [message, setMessage] = useState('');
-
     const login = useSessionStore((state) => state.login);
     const users = useUserStore((state) => state.userList);
 

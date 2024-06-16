@@ -8,6 +8,7 @@ import "../styles/formStyle.css";
 function SignUp(){
 
     const [keys, setKeys] = useState<string | null> (null);
+    const [message, setMessage] = useState('');
     const navigate = useNavigate();
 
     const { movie, setMovieList } = useMovieStore(state => ({
@@ -44,6 +45,7 @@ function SignUp(){
         const user = { username, password, userMovieList };
 
         signUp(user);
+        setMessage('Användare ' + username + ' skapad!');
     }
 
     return (
@@ -55,7 +57,8 @@ function SignUp(){
               <label htmlFor="newUserPassword"></label>
               <input type="password" id="newUserPassword" name="newUserPassword" placeholder="Lösenord"></input>
               <button type="submit">Skapa ny användare</button>
-          </form> 
+          </form>
+          {message && <p className="message">{message}</p>} 
       </section>
     )
 }

@@ -17,7 +17,7 @@ function MovieList(){
     }
 
     return (
-        <div>
+        <section>
             {(movieList) && movieList.length > 0 ? (
                 movieList.map((movie, index) => (
                     <section className="movieSection" key={index}>
@@ -29,7 +29,7 @@ function MovieList(){
             ) : (
                 <p>Inga filmer tillgängliga</p>
             )}
-        </div>
+        </section>
     );
 }
 

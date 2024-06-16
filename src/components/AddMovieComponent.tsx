@@ -24,7 +24,8 @@ function AddMovie(){
 
     return(
         <section className="formContainer">
-            <h2 className="heading">Lägg till film</h2>
+            <h2 className="heading">Hej {loggedUser?.username}!</h2>
+            <h2 className="heading">Vill du lägga till en film?</h2>
             <form className="formContainer" onSubmit={handleAddMovieSubmit} method="post">
                 <label htmlFor="newMovieTitle"></label>
                 <input type="text" id="newMovieTitle" name="newMovieTitle" placeholder="Filmnamn"></input>
